@@ -22,7 +22,7 @@ class CloudAccounts(core.CoreDict):
       if response['data'] and response['data'].has_key('cloudAccountListing') and response['data']['cloudAccountListing'].has_key('cloudAccounts'):
         for cloud_account in response['data']['cloudAccountListing']['cloudAccounts']:
           cloud_account_obj = CloudAccount(self.manager, cloud_account, self.log)
-          self[cloud_account_obj.cloud_account_id] = cloud_account_obj
+          self[cloud_account_obj.cloudAccountId] = cloud_account_obj
 
   def add_aws_account(self, name, aws_access_key=None, aws_secret_key=None, region="all"):
     """
